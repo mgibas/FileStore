@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileAtSpecificVersionDoesNotExistException.cs" />
+    <Compile Include="IFileStoreBuilder.cs" />
+    <Compile Include="IFileStoreConfigurator.cs" />
     <Compile Include="VersionedFileStore.cs" />
-    <Compile Include="FileStoreConfiguration.cs" />
+    <Compile Include="FileStoreBuilder.cs" />
     <Compile Include="IPersistance.cs" />
     <Compile Include="IFileStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

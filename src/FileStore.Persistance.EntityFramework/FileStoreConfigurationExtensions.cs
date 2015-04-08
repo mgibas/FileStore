@@ -1,17 +1,21 @@
-﻿using AutoMapper;
+﻿using System.Data.Entity;
+using System.Diagnostics.CodeAnalysis;
+using AutoMapper;
 namespace FileStore.Persistance.EntityFramework
 {
-    public static class FileStoreConfigurationExtensions
+  [ExcludeFromCodeCoverage]
+  public static class FileStoreConfigurationExtensions
+  {
+    public static IFileStoreConfigurator UseEntityFramework(this IFileStoreConfigurator @this, string connectionStringName)
     {
-        public static FileStoreConfiguration UseEntityFramework(this FileStoreConfiguration @this, string connectionStringName)
-        {
-            FileDbContext.ConnectionStringName = connectionStringName;
-
-            @this.AddComponentForRegistration(typeof(IPersistance), typeof(EntityFrameworkPersistance));
-            @this.AddComponentForRegistration(typeof(IFileDbContext), typeof(FileDbContext));
-            @this.AddComponentForRegistration(typeof(IMappingEngine), () => Mapper.Engine);
-
-            return @this;
-        }
+      @this.UsePersistance(new EntityFrameworkPersistance(new FileDbContext(connectionStringName), Mapper.Engine));
+      return @this;
     }
+
+    public static IFileStoreConfigurator InitializeDatabase(this IFileStoreConfigurator @this)
+    {
+      Database.SetInitializer(new CreateDatabaseIfNotExists<FileDbContext>());
+      return @this;
+    }
+  }
 }

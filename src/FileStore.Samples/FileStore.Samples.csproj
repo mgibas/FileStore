@@ -63,10 +63,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FileStore.Autofac\FileStore.Autofac.csproj">
-      <Project>{c3b1a52a-88c1-4aa5-b4b7-1383e97d8ac9}</Project>
-      <Name>FileStore.Autofac</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FileStore.Persistance.EntityFramework\FileStore.Persistance.EntityFramework.csproj">
       <Project>{c25fc536-7198-4dd1-ab6d-4bc705577c16}</Project>
       <Name>FileStore.Persistance.EntityFramework</Name>

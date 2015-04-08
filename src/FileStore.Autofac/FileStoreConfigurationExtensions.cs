@@ -4,7 +4,7 @@ namespace FileStore.Autofac
 {
     public static class FileStoreConfigurationExtensions
     {
-        public static void UseAutofac(this FileStoreConfiguration @this, ContainerBuilder builder)
+      public static FileStoreBuilder UseAutofac(this FileStoreBuilder @this, ContainerBuilder builder)
         {
             foreach (var registration in @this.GetComponentsForRegistration())
                 builder.RegisterType(registration.Value).As(registration.Key);

@@ -1,16 +1,15 @@
 ﻿using System.Data.Entity;
+using System.Diagnostics.CodeAnalysis;
 
 namespace FileStore.Persistance.EntityFramework
 {
-    public class FileDbContext : DbContext, IFileDbContext
-    {
-        public FileDbContext()
-            : base(ConnectionStringName)
-        { }
+  [ExcludeFromCodeCoverage]
+  public class FileDbContext : DbContext, IFileDbContext
+  {
+    public FileDbContext(string connectionStringName)
+      : base(connectionStringName)
+    { }
 
-        public static string ConnectionStringName;
-
-        public DbSet<StoredFile> StoredFiles { get; set; }
-    }
-
+    public DbSet<StoredFile> StoredFiles { get; set; }
+  }
 }

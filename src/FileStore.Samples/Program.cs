@@ -1,22 +1,25 @@
-﻿using Autofac;
-using FileStore.Autofac;
+﻿using System;
+using Autofac;
 using FileStore.Persistance.EntityFramework;
 
 namespace FileStore.Samples
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            var builder = new ContainerBuilder();
+      var containerBuilder = new ContainerBuilder();
+      var fileStoreBuilder = FileStoreBuilder.Config(cfg =>
+      {
+        cfg.UseEntityFramework("some.connection.string.name");
+        cfg.InitializeDatabase();
+      });
 
-            FileStoreConfiguration.Init()
-                .UseEntityFramework("sample.connectionstring.name")
-                .UseAutofac(builder);
+      containerBuilder.Register(c => fileStoreBuilder.Build());
+      var container = containerBuilder.Build();
 
-            var container = builder.Build();
-
-            var store = container.Resolve<IFileStore>();
-        }
+      var store = container.Resolve<IFileStore>();
+      store.StoreFile(Guid.NewGuid(), new StoreFile { Data = new byte[] { 1, 2, 3 }, Extension = "txt" });
     }
+  }
 }
