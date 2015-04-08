@@ -6,18 +6,35 @@ namespace FileStore
     {
         public FileStoreConfiguration()
         {
-            ComponentsForRegistration = new Dictionary<Type, Type>();
-            LambdaComponentsForRegistration = new Dictionary<Type, Func<object>>();
+            componentsForRegistration = new Dictionary<Type, Type>();
+            delegateComponentsForRegistration = new Dictionary<Type, Func<object>>();
         }
 
         public static FileStoreConfiguration Init()
         {
             var configuration = new FileStoreConfiguration();
-            configuration.ComponentsForRegistration.Add(typeof(IFileStore), typeof(VersionedFileStore));
+            configuration.componentsForRegistration.Add(typeof(IFileStore), typeof(VersionedFileStore));
             return configuration;
         }
 
-        public Dictionary<Type, Type> ComponentsForRegistration { get; private set; }
-        public Dictionary<Type, Func<object>> LambdaComponentsForRegistration { get; private set; }
+        private Dictionary<Type, Type> componentsForRegistration;
+        private Dictionary<Type, Func<object>> delegateComponentsForRegistration;
+
+        public void AddComponentForRegistration(Type service, Func<object> implementation)
+        {
+            delegateComponentsForRegistration.Add(service, implementation);
+        }
+        public void AddComponentForRegistration(Type service, Type implementation)
+        {
+            componentsForRegistration.Add(service, implementation);
+        }
+        public Dictionary<Type, Type> GetComponentsForRegistration()
+        {
+            return componentsForRegistration;
+        }
+        public Dictionary<Type, Func<object>> GetDelegateComponentsForRegistration()
+        {
+            return delegateComponentsForRegistration;
+        }
     }
 }

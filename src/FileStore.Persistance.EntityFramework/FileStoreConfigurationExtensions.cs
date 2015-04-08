@@ -7,9 +7,9 @@ namespace FileStore.Persistance.EntityFramework
         {
             FileDbContext.ConnectionStringName = connectionStringName;
 
-            @this.ComponentsForRegistration.Add(typeof(IPersistance), typeof(EntityFrameworkPersistance));
-            @this.ComponentsForRegistration.Add(typeof(IFileDbContext), typeof(FileDbContext));
-            @this.LambdaComponentsForRegistration.Add(typeof(IMappingEngine), () => Mapper.Engine);
+            @this.AddComponentForRegistration(typeof(IPersistance), typeof(EntityFrameworkPersistance));
+            @this.AddComponentForRegistration(typeof(IFileDbContext), typeof(FileDbContext));
+            @this.AddComponentForRegistration(typeof(IMappingEngine), () => Mapper.Engine);
 
             return @this;
         }

@@ -35,17 +35,17 @@ namespace FileStore.Persistance.EntityFramework.Tests.Unit
         {
             configuration.UseEntityFramework("asdsa");
 
-            Assert.True(configuration.ComponentsForRegistration.ContainsKey(service));
-            Assert.Equal(implementation, configuration.ComponentsForRegistration[service]);
+            Assert.True(configuration.GetComponentsForRegistration().ContainsKey(service));
+            Assert.Equal(implementation, configuration.GetComponentsForRegistration()[service]);
         }
 
         [Fact]
-        public void UseEntityFramework_AddsAutomapperLambdaCommponentForRegistration()
+        public void UseEntityFramework_AddsAutomapperDelegateCommponentForRegistration()
         {
             configuration.UseEntityFramework("asdsa");
 
-            Assert.True(configuration.LambdaComponentsForRegistration.ContainsKey(typeof(IMappingEngine)));
-            Assert.Equal(Mapper.Engine, configuration.LambdaComponentsForRegistration[typeof(IMappingEngine)].Invoke());
+            Assert.True(configuration.GetDelegateComponentsForRegistration().ContainsKey(typeof(IMappingEngine)));
+            Assert.Equal(Mapper.Engine, configuration.GetDelegateComponentsForRegistration()[typeof(IMappingEngine)].Invoke());
         }
     }
 }
