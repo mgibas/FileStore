@@ -1,4 +1,5 @@
 ﻿using FakeItEasy;
+using FileStore.Exceptions;
 using System;
 using Xunit;
 

@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="EntityFrameworkPersistance.cs" />
     <Compile Include="FileDbContext.cs" />
-    <Compile Include="FileStoreConfigurationExtensions.cs" />
+    <Compile Include="FileStoreConfiguratorExtensions.cs" />
     <Compile Include="IFileDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoredFile.cs" />

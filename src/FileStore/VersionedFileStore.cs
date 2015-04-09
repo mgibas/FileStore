@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileStore.Exceptions;
+using System;
 
 namespace FileStore
 {
@@ -29,7 +30,7 @@ namespace FileStore
         {
             var result = persistance.ReadFile(id, version);
             if (result == null)
-                throw new FileAtSpecificVersionDoesNotExistException();
+                throw new FileAtSpecificVersionDoesNotExistException(id, version);
             return result;
         }
     }

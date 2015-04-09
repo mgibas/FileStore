@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileAtSpecificVersionDoesNotExistException.cs" />
+    <Compile Include="Exceptions\FileAtSpecificVersionDoesNotExistException.cs" />
     <Compile Include="IFileStoreBuilder.cs" />
     <Compile Include="IFileStoreConfigurator.cs" />
     <Compile Include="VersionedFileStore.cs" />
