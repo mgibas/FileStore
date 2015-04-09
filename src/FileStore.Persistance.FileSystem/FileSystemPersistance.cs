@@ -1,9 +1,17 @@
 ﻿using System;
+using System.IO.Abstractions;
 
 namespace FileStore.Persistance.FileSystem
 {
     public class FileSystemPersistance : IPersistance
     {
+        public FileSystemPersistance(IFileSystem fileSystem)
+        {
+            this.fileSystem = fileSystem;
+        }
+
+        private IFileSystem fileSystem;
+
         public void Persist(Guid id, StoreFile fileToStore, int version)
         {
             throw new System.NotImplementedException();
