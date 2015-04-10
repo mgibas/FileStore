@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>FileStore.Persistance.FileSystem</id>
+    <version>$version$</version>
+    <authors>badkenny</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>File system persistance for FileStore</description>
+    <language>en-US</language>
+    <projectUrl>https://github.com/mgibas/FileStore</projectUrl>
+    <tags>Persistance FileSystem FileStore</tags>
+  </metadata>
+</package>

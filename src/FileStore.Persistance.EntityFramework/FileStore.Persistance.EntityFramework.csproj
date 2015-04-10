@@ -64,6 +64,7 @@
     <Compile Include="StoredFile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FileStore.Persistance.EntityFramework.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
