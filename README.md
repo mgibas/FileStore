@@ -1,4 +1,4 @@
-FileStore [![Build status](https://ci.appveyor.com/api/projects/status/uf021jx0uwmss48o?retina=true)](https://ci.appveyor.com/project/mgibas/fileStore)
+FileStore [![Build status](https://ci.appveyor.com/api/projects/status/g5l1ixdibke1p5j3?retina=true)](https://ci.appveyor.com/project/mgibas/filestore)
 ====
 Simple .Net file storage
 
