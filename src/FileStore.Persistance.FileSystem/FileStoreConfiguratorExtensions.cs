@@ -10,7 +10,7 @@ namespace FileStore.Persistance.FileSystem
         public static IFileStoreConfigurator UseFileSystem(this IFileStoreConfigurator @this, string storeDirectory)
         {
             if (string.IsNullOrEmpty(storeDirectory))
-                throw new ArgumentNullException("storeDirectory", @"In order to save files using file system Please provide valid directory path.");
+                throw new ArgumentNullException("storeDirectory", string.Format(@"In order to save files using file system Please provide valid directory path. Invalid value was: '{0}'", storeDirectory));
             if (!storeDirectory.EndsWith("\\"))
                 storeDirectory += "\\";
 
