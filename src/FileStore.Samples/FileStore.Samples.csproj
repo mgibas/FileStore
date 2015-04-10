@@ -67,6 +67,10 @@
       <Project>{c25fc536-7198-4dd1-ab6d-4bc705577c16}</Project>
       <Name>FileStore.Persistance.EntityFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FileStore.Persistance.FileSystem\FileStore.Persistance.FileSystem.csproj">
+      <Project>{d33ba4e8-7321-4d45-a49c-a41a4411a6fa}</Project>
+      <Name>FileStore.Persistance.FileSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileStore\FileStore.csproj">
       <Project>{342234b3-f4ae-4799-8e2d-8463d1f3a7be}</Project>
       <Name>FileStore</Name>
