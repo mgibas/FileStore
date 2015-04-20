@@ -10,4 +10,7 @@
     <projectUrl>https://github.com/mgibas/FileStore</projectUrl>
     <tags>Persistance EntityFramework FileStore</tags>
   </metadata>
+  <dependencies>
+    <dependency id="FileStore" version="$version$" />
+  </dependencies>
 </package>

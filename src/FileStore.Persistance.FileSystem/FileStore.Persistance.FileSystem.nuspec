@@ -10,4 +10,7 @@
     <projectUrl>https://github.com/mgibas/FileStore</projectUrl>
     <tags>Persistance FileSystem FileStore</tags>
   </metadata>
+  <dependencies>
+    <dependency id="FileStore" version="$version$" />
+  </dependencies>
 </package>
