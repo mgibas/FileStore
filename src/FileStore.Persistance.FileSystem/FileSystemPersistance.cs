@@ -43,7 +43,9 @@ namespace FileStore.Persistance.FileSystem
         public int GetFileLatestVersion(Guid id)
         {
             var avaibleFiles = fileSystem.Directory.GetFiles(storeDirectory, string.Format("{0}_*.*", id));
-            var latestFileName = avaibleFiles.OrderByDescending(f => f).First();
+            var latestFileName = avaibleFiles
+                .OrderByDescending(f => f.Length)
+                .ThenByDescending(f => f).First();
             var version = Regex.Match(latestFileName, @"[.]*_([0-9]*)\.[.]*").Groups[1].Value;
             return int.Parse(version);
         }

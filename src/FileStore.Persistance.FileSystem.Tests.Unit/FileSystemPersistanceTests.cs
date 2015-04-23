@@ -173,5 +173,22 @@ namespace FileStore.Persistance.FileSystem.Tests.Unit
 
             Assert.Equal(6, result);
         }
+
+        [Fact]
+        public void GetFileLatestVersion_Over9Versions_ReturnsLatestVersionUsingNumericSort()
+        {
+            var id = Guid.NewGuid();
+            A.CallTo(() => fileSystem.Directory.GetFiles(configuredDirectory, string.Format("{0}_*.*", id)))
+               .Returns(new[]{
+               "somefile_7.txt",
+               "somefile_8.txt",
+               "somefile_9.txt",
+               "somefile_10.txt",
+               });
+
+            var result = persistance.GetFileLatestVersion(id);
+
+            Assert.Equal(10, result);
+        }
     }
 }
