@@ -2,6 +2,7 @@
 {
   public interface IFileStoreBuilder
   {
-    IFileStore Build();
+    IVersionedFileStore BuildVersioned();
+    IFileStore BuildUnversioned();
   }
 }

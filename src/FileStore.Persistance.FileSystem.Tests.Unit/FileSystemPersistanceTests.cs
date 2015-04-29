@@ -94,7 +94,7 @@ namespace FileStore.Persistance.FileSystem.Tests.Unit
             var version = 6;
             var expectedSearchFileName = string.Format("{0}_{1}.*", id, version);
 
-            var result = persistance.ReadFile(id, version);
+            persistance.ReadFile(id, version);
 
             A.CallTo(() => fileSystem.Directory.GetFiles(configuredDirectory, expectedSearchFileName)).MustHaveHappened();
         }
@@ -166,7 +166,7 @@ namespace FileStore.Persistance.FileSystem.Tests.Unit
                "somefile_3.txt",
                "somefile_6.txt",
                "somefile_5.txt",
-               "somefile_4.txt",
+               "somefile_4.txt"
                });
 
             var result = persistance.GetFileLatestVersion(id);
@@ -183,7 +183,7 @@ namespace FileStore.Persistance.FileSystem.Tests.Unit
                "somefile_7.txt",
                "somefile_8.txt",
                "somefile_9.txt",
-               "somefile_10.txt",
+               "somefile_10.txt"
                });
 
             var result = persistance.GetFileLatestVersion(id);

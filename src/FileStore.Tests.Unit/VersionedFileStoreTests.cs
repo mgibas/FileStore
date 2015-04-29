@@ -5,12 +5,12 @@ using Xunit;
 
 namespace FileStore.Tests.Unit
 {
-    public class VersionedFileStorageTests
+    public class VersionedFileStoreTests
     {
         private IPersistance persistance;
         private VersionedFileStore storage;
 
-        public VersionedFileStorageTests()
+        public VersionedFileStoreTests()
         {
             persistance = A.Fake<IPersistance>();
             storage = new VersionedFileStore(persistance);

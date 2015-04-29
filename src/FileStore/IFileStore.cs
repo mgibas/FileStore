@@ -2,10 +2,9 @@
 
 namespace FileStore
 {
-    public interface IFileStore
-    {
-        void StoreFile(Guid id, StoreFile file);
-        StoreFile OpenFile(Guid id);
-        StoreFile OpenFile(Guid id, int version);
-    }
+  public interface IFileStore
+  {
+    void StoreFile(Guid id, StoreFile file);
+    StoreFile OpenFile(Guid id);
+  }
 }
