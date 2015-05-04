@@ -18,12 +18,13 @@ Features
 
 Usages
 ====
+Versioned file store:
 ```csharp
 var fileStoreBuilder = FileStoreBuilder.Config(cfg =>
 {
     cfg.UseFileSystem("myDirectory\\fileStoreDirectory");
 });
-var store = fileStoreBuilder.Build();
+var store = fileStoreBuilder.BuildVersioned();
 
 var id = Guid.NewGuid();
 store.StoreFile(id, new StoreFile { Data = new byte[] { 1, 2, 3 }, Extension = "txt" });
@@ -32,6 +33,14 @@ store.StoreFile(id, new StoreFile { Data = new byte[] { 1, 2, 3, 4, 5, 6 }, Exte
 var latestFileVersion = store.OpenFile(id);
 var firstVersion = store.OpenFile(id, 0);
 ```
+
+Unversioned file store:
+```csharp
+var store = fileStoreBuilder.BuildUnversioned();
+```
+> With this setup You saves and opens files at single version - there is no ```store.OpenFile(Guid, int)```
+
+
 Using Entity Framework:
 ```csharp
 var fileStoreBuilder = FileStoreBuilder.Config(cfg =>
@@ -49,7 +58,7 @@ var fileStoreBuilder = FileStoreBuilder.Config(cfg =>
     cfg.UseFileSystem("C:\\fileStore");
 });
 
-containerBuilder.Register(c => fileStoreBuilder.Build());
+containerBuilder.Register(c => fileStoreBuilder.BuildVersioned());
 
 var container = containerBuilder.Build();
 var store = container.Resolve<IFileStore>();
