@@ -57,6 +57,7 @@
     <Compile Include="FileStoreConfiguratorExtensions.cs" />
     <Compile Include="IFileDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\MigrationsContextFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoredFile.cs" />
   </ItemGroup>

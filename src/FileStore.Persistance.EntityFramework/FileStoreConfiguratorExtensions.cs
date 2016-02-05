@@ -8,7 +8,7 @@ namespace FileStore.Persistance.EntityFramework
     [ExcludeFromCodeCoverage]
     public static class FileStoreConfiguratorExtensions
     {
-        private static string _connectionString;
+        public static string ConnectionString;
 
         public static IFileStoreConfigurator UseEntityFramework(this IFileStoreConfigurator @this, string connectionStringName)
         {
@@ -16,7 +16,7 @@ namespace FileStore.Persistance.EntityFramework
                 throw new ArgumentNullException("connectionStringName", @"Entity Framework in order to with selected database need to have propper connection string.
                 Please provide connection string name of connection string located in Your app config or connection string it self");
 
-            _connectionString = connectionStringName;
+            ConnectionString = connectionStringName;
             @this.UsePersistance(new EntityFrameworkPersistance(new FileDbContext(connectionStringName), Mapper.Engine));
             return @this;
         }
@@ -25,7 +25,7 @@ namespace FileStore.Persistance.EntityFramework
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<FileDbContext>());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<FileDbContext, Migrations.Configuration>());
-            new FileDbContext(_connectionString).Database.Initialize(false);
+            new FileDbContext(ConnectionString).Database.Initialize(false);
             return @this;
         }
     }
