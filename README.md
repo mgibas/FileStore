@@ -1,5 +1,4 @@
-<a href="https://www.gitcheese.com/app/#/projects/d9efa213-d86a-49aa-8398-69a029901745/pledges/create" target="_blank" style="float:left;" > <img src="https://api.gitcheese.com/v1/projects/d9efa213-d86a-49aa-8398-69a029901745/badges" width="200px" /> </a>
-FileStore [![Build status](https://ci.appveyor.com/api/projects/status/g5l1ixdibke1p5j3?retina=true)](https://ci.appveyor.com/project/mgibas/filestore)
+[![gitcheese.com](https://api.gitcheese.com/v1/projects/d9efa213-d86a-49aa-8398-69a029901745/badges)](https://www.gitcheese.com/app/#/projects/d9efa213-d86a-49aa-8398-69a029901745/pledges/create) FileStore [![Build status](https://ci.appveyor.com/api/projects/status/g5l1ixdibke1p5j3?retina=true)](https://ci.appveyor.com/project/mgibas/filestore)
 ====
 Simple .Net file storage
 
@@ -69,3 +68,6 @@ Contribute
 Creating new Persistance engine is very simple - just implement `IPersistance` and provide configuration extensions. 
 
 Maybe You have other idea - do no hesitate - please send me some pull request :)
+
+====
+[![gitcheese.com](https://api.gitcheese.com/v1/projects/d9efa213-d86a-49aa-8398-69a029901745/badges)](https://www.gitcheese.com/app/#/projects/d9efa213-d86a-49aa-8398-69a029901745/pledges/create)
