@@ -1,4 +1,7 @@
-# FileStore  [![gitcheese.com](https://img.shields.io/badge/gitcheese-donate-FDE383.svg?style=flat-square)](https://www.gitcheese.com/app/#/projects/d9efa213-d86a-49aa-8398-69a029901745/pledges/create) [![Build status](https://ci.appveyor.com/api/projects/status/g5l1ixdibke1p5j3)](https://ci.appveyor.com/project/mgibas/filestore)
+# FileStore  
+
+[![Build status](https://ci.appveyor.com/api/projects/status/g5l1ixdibke1p5j3/branch/master?svg=true)](https://ci.appveyor.com/project/mgibas/filestore/branch/master)
+[![gitcheese.com](https://api.gitcheese.com/v1/projects/d9efa213-d86a-49aa-8398-69a029901745/badges)](https://www.gitcheese.com/app/#/projects/d9efa213-d86a-49aa-8398-69a029901745/pledges/create)
 
 Simple .Net file storage
 
