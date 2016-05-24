@@ -7,6 +7,9 @@
     <a href="https://www.gitcheese.com/app/#/projects/d9efa213-d86a-49aa-8398-69a029901745/pledges/create">
         <img src="https://api.gitcheese.com/v1/projects/d9efa213-d86a-49aa-8398-69a029901745/badges"></img>
     </a>
+    <a href="https://www.nuget.org/packages/NUnit.Asserts.Compare/">
+        <img src="https://img.shields.io/nuget/v/NUnit.Asserts.Compare.svg?style=flat-square"></img>
+    </a>
 </p>
 
 ===
@@ -80,5 +83,3 @@ Creating new Persistance engine is very simple - just implement `IPersistance` a
 
 Maybe You have other idea - do no hesitate - please send me some pull request :)
 
-====
-[![gitcheese.com](https://api.gitcheese.com/v1/projects/d9efa213-d86a-49aa-8398-69a029901745/badges)](https://www.gitcheese.com/app/#/projects/d9efa213-d86a-49aa-8398-69a029901745/pledges/create)
