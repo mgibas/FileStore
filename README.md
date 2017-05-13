@@ -4,15 +4,13 @@
     <a href="https://ci.appveyor.com/project/mgibas/filestore/branch/master">
         <img src="https://ci.appveyor.com/api/projects/status/g5l1ixdibke1p5j3/branch/master?svg=true"></img>
     </a>
-    <a href="https://www.gitcheese.com/app/#/projects/d9efa213-d86a-49aa-8398-69a029901745/pledges/create">
-        <img src="https://api.gitcheese.com/v1/projects/d9efa213-d86a-49aa-8398-69a029901745/badges"></img>
+    <a href="https://www.gitcheese.com/donate/users/530319/repos/33446979">
+        <img src="https://s3.amazonaws.com/gitcheese-ui-master/images/badge.svg"></img>
     </a>
     <a href="https://www.nuget.org/packages/NUnit.Asserts.Compare/">
         <img src="https://img.shields.io/nuget/v/NUnit.Asserts.Compare.svg?style=flat-square"></img>
     </a>
 </p>
-
-===
 
 Simple .Net file storage
 
